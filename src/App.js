@@ -1,10 +1,10 @@
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
-  );
+import ReactDOM from 'react-dom';
+class App extends ReactDOM{
+  render(){
+    return
+      <input/>
+    
+  }
 }
 
 export default App;
