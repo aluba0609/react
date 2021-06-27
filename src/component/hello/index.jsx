@@ -8,7 +8,7 @@ class HelloSon extends Component{
     UNSAFE_componentWillReceiveProps(){
         console.log("HelloSon组件收到props")
     }
-    UNSAFE_componentWill (){
+    UNSAFE_componentWillMount (){
         console.log("HelloSon组件componentWillMount")
     }
     UNSAFE_componentWillUpdate(){
