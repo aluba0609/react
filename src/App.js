@@ -41,7 +41,7 @@ export default class App extends Component {
     })
     this.setState({ todos: newTodos })
   }
-  clearAllDone = () => {debugger
+  clearAllDone = () => {
     const { todos } = this.state
     const newTodos = todos.filter((todo) => {
       return todo.done ===false
@@ -58,4 +58,3 @@ export default class App extends Component {
     )
   }
 }
-//66
