@@ -10,6 +10,14 @@ export default class State extends Component {
             { id:"03", title: "新闻state3" },
         ]
     }
+    replaceShow=(id,title)=>{
+        //编写一段代码 实现Detail组件，实现replace +  query
+        this.props.history.replace(`/home/state/detail`,{id,title})
+    }
+    pushShow=(id,title)=>{
+        //编写一段代码 实现Detail组件，实现push   +  query
+        this.props.history.push(`/home/state/detail`,{id,title})
+    }
     render() {
         const { messageArr } = this.state
         return (
@@ -19,7 +27,11 @@ export default class State extends Component {
                         messageArr.map((message)=>{
                             return(
                                 // 向路由组件传递state参数
-                                <li key={message.id}><Link to={{pathname:"/home/state/detail",state:{id:message.id,title:message.title}}}>{message.title}</Link> </li>
+                                <li key={message.id}>
+                                    <Link replace={true} to={{pathname:"/home/state/detail",state:{id:message.id,title:message.title}}}>{message.title}</Link>
+                                    <button onClick={()=>{this.pushShow(message.id,message.title)}}>push查看</button>&nbsp;
+                                    <button onClick={()=>{this.replaceShow(message.id,message.title)}}>replace查看</button>
+                                </li>
                             )
                         })
                     }

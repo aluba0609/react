@@ -15,7 +15,7 @@ export default class Detile extends Component {
                 <ul>
                     <li>{`ID:${id}`}</li>
                     <li>{`TITLE:${title}`}</li>
-                    <li>{`content:${findResult.title}`}</li>
+                    <li>{`content:${findResult.content}`}</li>
                 </ul>
             </div>
         )
