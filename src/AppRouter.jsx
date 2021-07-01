@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Switch, Route ,Redirect} from 'react-router-dom'
+import MyHeader from './component/myHeader'
 import About from './component/About'
 import Home from './component/Home'
 import MyNavLink from './component/MyNavLink'
@@ -9,7 +10,7 @@ export default class AppRouter extends Component {
         return (
             <div>
                 <div>
-                    路由
+                    <MyHeader/>
                 </div>
                 <div>
                     <MyNavLink to='/about' title="about">about</MyNavLink>
