@@ -26,7 +26,6 @@ export default class AppRouter extends Component {
                             {/* <Route exact path='/home' component={Home} /严格模式 勿乱开启> */}
                             <Redirect to="/about"></Redirect>
                         </Switch>
-
                     </div>
                 </div>
             </div>

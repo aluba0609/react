@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import store from '../../../redux/store'
 
-//从action 引入actionCreator 专门创建action对象
-import {createIncrementAction,createDecrementAction,createIncrementAsyncAction} from '../../../redux/count_actions'
-
 export default class Count extends Component {
     state = {
         carName: '奔驰c63'
@@ -16,22 +13,24 @@ export default class Count extends Component {
     // }
     increment = () => {
         const { value } = this.selectNumber
-        store.dispatch(createIncrementAction(value*1))
+        store.dispatch({type:"increment" , data:value*1})
     }
     decrement = () => {
         const { value } = this.selectNumber
-        store.dispatch(createDecrementAction(value*1))
+        store.dispatch({type:"decrement" , data:value*1})
     }
     incrementfOdd = () => {
         const { value } = this.selectNumber
         const count  = store.getState()
         if (count % 2 !== 0) {
-            store.dispatch(createIncrementAction(value*1))
+            store.dispatch({type:"increment" , data:value*1})
         }
     }
     incrementAsync = () => {
         const { value } = this.selectNumber
-            store.dispatch(createIncrementAsyncAction(value*1,500))
+        setTimeout(() => {
+            store.dispatch({type:"increment" , data:value*1})
+        }, 1000)
     }
     render() {
         return (
